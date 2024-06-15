@@ -1,0 +1,12 @@
+<form class="form" [formGroup]="buscarEstudiante">
+  <h1>Buscar mi ID</h1>
+  <mat-form-field>
+    <mat-label>Nombre estudiante</mat-label>
+    <input formControlName="name" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Id_Estudiante</mat-label>
+    <input formControlName="id" matInput>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="buscar()">Buscar</button>
+</form>

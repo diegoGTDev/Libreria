@@ -1,0 +1,21 @@
+<form class="form" [formGroup]="prestarLibroForm">
+  <h1>Libreria</h1>
+  <mat-form-field>
+    <mat-label>ID de estudiante </mat-label>
+    <input formControlName="idEstudiante" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Libros</mat-label>
+    <mat-select formControlName="Libro">
+      <mat-option *ngFor="let libro of libros" [value]="libro">{{libro.titulo}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Fecha de prestamo</mat-label>
+    <input formControlName="FechaDePrestamo" matInput [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="prestar()">Prestar</button>
+</form>

@@ -1,0 +1,14 @@
+<form class="form" [formGroup]="devolverLibroForm">
+  <h1>Devolver libro</h1>
+  <mat-form-field>
+    <mat-label>ID de estudiante </mat-label>
+    <input formControlName="idEstudiante" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Libros</mat-label>
+    <mat-select formControlName="Libro">
+      <mat-option *ngFor="let libro of libros" [value]="libro">{{libro.titulo}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="devolver()">Devolver</button>
+</form>
